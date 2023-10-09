@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "J9sVOxv2aMXqaBr4B1QkLonNBFfIlnwTtUHC/1HOx2Mw6G4mbkZbfIGb4pGc1LuUHJQGfZd7Q6JmYebm0wCT4A==",
+  "success": true,
+  "projectFilePath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cousi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
