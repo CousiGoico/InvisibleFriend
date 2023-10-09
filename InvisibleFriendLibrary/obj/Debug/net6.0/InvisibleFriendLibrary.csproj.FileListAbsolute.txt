@@ -1,0 +1,12 @@
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.csproj.AssemblyReference.cache
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.GeneratedMSBuildEditorConfig.editorconfig
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.AssemblyInfoInputs.cache
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.AssemblyInfo.cs
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.csproj.CoreCompileInputs.cache
+L:\InvisibleFriend\InvisibleFriendLibrary\bin\Debug\net6.0\InvisibleFriendLibrary.deps.json
+L:\InvisibleFriend\InvisibleFriendLibrary\bin\Debug\net6.0\InvisibleFriendLibrary.dll
+L:\InvisibleFriend\InvisibleFriendLibrary\bin\Debug\net6.0\InvisibleFriendLibrary.pdb
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.dll
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\refint\InvisibleFriendLibrary.dll
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\InvisibleFriendLibrary.pdb
+L:\InvisibleFriend\InvisibleFriendLibrary\obj\Debug\net6.0\ref\InvisibleFriendLibrary.dll
