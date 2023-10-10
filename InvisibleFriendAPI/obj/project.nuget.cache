@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J9sVOxv2aMXqaBr4B1QkLonNBFfIlnwTtUHC/1HOx2Mw6G4mbkZbfIGb4pGc1LuUHJQGfZd7Q6JmYebm0wCT4A==",
+  "dgSpecHash": "mUCz77SlFo6Dbtf+sg/AEBixEfcaFG2WU9vZ+vP9nZ6Lsb25eDfIqZF9DGK3gXVbWyM78vtPOE2r4nC7LzmYRw==",
   "success": true,
-  "projectFilePath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+  "projectFilePath": "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cousi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Cousi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

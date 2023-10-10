@@ -1,3 +1,5 @@
+using System;
+
 namespace InvisibleFriendLibrary;
 
 [Serializable]
@@ -22,9 +24,9 @@ private void Distribute() {
         var numberRandom = new Random();
         var minimumNumber = this.Friends.Select(x => x.Id).Min();
         var maximumNumber = this.Friends.Select(x => x.Id).Max();
-        var randomId = numberRandom.next(minimumNumber, maximumNumber);
-        if (friend.Couple.HasValue() && randomId == friend.Couple.Id){
-             randomId = numberRandom.next(minimumNumber, maximumNumber);
+        var randomId = numberRandom.Next(minimumNumber, maximumNumber);
+        if (friend.Couple != null && randomId == friend.Couple.Id){
+             randomId = numberRandom.Next(minimumNumber, maximumNumber);
         }
         friend.FriendToGivePresent = this.Friends.First(x => x.Id == randomId);
     });
