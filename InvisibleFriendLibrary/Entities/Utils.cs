@@ -14,8 +14,4 @@ public class Utils{
             
         smtpClient.Send("email", "recipient", "subject", "body");
     }    
-
-    public static void SendEmail(Friend friend){
-
-    }
 }
