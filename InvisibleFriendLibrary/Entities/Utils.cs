@@ -9,7 +9,7 @@ public class Utils{
         {
             Port = 587,
             Credentials = new NetworkCredential("username", "password"),
-            EnableSsl = true,
+            EnableSsl = true
         };
             
         smtpClient.Send("email", "recipient", "subject", "body");
