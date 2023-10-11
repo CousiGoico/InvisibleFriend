@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {}
+    "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {}
   },
   "projects": {
-    "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
+    "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
+        "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
         "projectName": "InvisibleFriendLibrary",
-        "projectPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
+        "projectPath": "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
         "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-        "outputPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\obj\\",
+        "outputPath": "L:\\invisiblefriend\\InvisibleFriendLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
         }
       }
     }

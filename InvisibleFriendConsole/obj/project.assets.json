@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
+      "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
       "projectName": "InvisibleFriendConsole",
-      "projectPath": "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
+      "projectPath": "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
       "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-      "outputPath": "L:\\InvisibleFriend\\InvisibleFriendConsole\\obj\\",
+      "outputPath": "L:\\invisiblefriend\\InvisibleFriendConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }
