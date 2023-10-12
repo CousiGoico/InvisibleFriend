@@ -40,7 +40,7 @@ private void SendEmails() {
         //Apply rules
         body.Replace("{{name}}", this.Name);
         body.Replace("{{rules}}", this.GetRules());
-        Utils.SendEmail(friend.Email, body); 
+        //Utils.SendEmail(friend.Email, body); 
     });
 }
 

@@ -21,7 +21,8 @@ public void SendEmail(){
     }
     var sender = this.FriendToGivePresent.Email;
     var body = this.ToEmail();
-    Utils.SendEmail(sender, body);
+    var configuration = new SmtpConfiguration();
+    Utils.SendEmail(configuration, sender, body);
 }
 
 public string ToEmail(){
