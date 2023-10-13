@@ -5,7 +5,7 @@ public class DataBase{
 
     #region Constants
 
-    private const string pathToSaveFile = @"../Data/data.json";
+    private const string pathToSaveFile = @"../InvisibleFriendLibrary/Data/data.json";
 
     #endregion
 

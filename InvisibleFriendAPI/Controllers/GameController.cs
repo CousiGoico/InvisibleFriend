@@ -39,13 +39,6 @@ public class GameController : ControllerBase
         return Ok();
     }
 
-    [HttpPost(Name = "PlayGame")]
-    public ActionResult Play(Game game)
-    {
-        game.Play();
-        return Ok();
-    }
-
     [HttpPut(Name = "PutGame")]
     public ActionResult Put(Game game)
     {

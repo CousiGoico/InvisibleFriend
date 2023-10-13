@@ -36,7 +36,7 @@ public class FriendController : ControllerBase
             database.Friends.Add(friend);
             database.Save();
         }
-        return Ok();;
+        return Ok();
     }
 
     [HttpPut(Name = "PutFriend")]
