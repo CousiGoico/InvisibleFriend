@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace InvisibleFriendLibrary;
+namespace InvisibleFriendLibrary.Entities;
 
 [Serializable]
 public class Game: Item {
@@ -30,7 +30,7 @@ private void Distribute() {
         if (friend.Couple != null && randomId == friend.Couple.Id){
              randomId = numberRandom.Next(minimumNumber, maximumNumber);
         }
-        friend.FriendToGivePresent = this.Friends.First(x => x.Id == randomId);
+        friend.SetFriendToGivePresent(this.Friends.First(x => x.Id == randomId));
     });
 }
 

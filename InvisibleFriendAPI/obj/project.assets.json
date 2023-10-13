@@ -88,6 +88,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "InvisibleFriendLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/InvisibleFriendLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InvisibleFriendLibrary.dll": {}
+        }
       }
     }
   },
@@ -429,10 +439,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "InvisibleFriendLibrary/1.0.0": {
+      "type": "project",
+      "path": "../InvisibleFriendLibrary/InvisibleFriendLibrary.csproj",
+      "msbuildProject": "../InvisibleFriendLibrary/InvisibleFriendLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "InvisibleFriendLibrary >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -442,11 +458,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+      "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
       "projectName": "InvisibleFriendAPI",
-      "projectPath": "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+      "projectPath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
       "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-      "outputPath": "L:\\invisiblefriend\\InvisibleFriendAPI\\obj\\",
+      "outputPath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -460,7 +476,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
+              "projectPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

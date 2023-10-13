@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace InvisibleFriendLibrary;
+namespace InvisibleFriendLibrary.Entities;
 
 public class Utils{
 

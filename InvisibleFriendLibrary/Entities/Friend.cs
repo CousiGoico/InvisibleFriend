@@ -1,7 +1,7 @@
 
 using System.Text;
 
-namespace InvisibleFriendLibrary;
+namespace InvisibleFriendLibrary.Entities;
 
 [Serializable]
 public class Friend : Item {
@@ -10,7 +10,7 @@ public class Friend : Item {
     public string Surname { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public Friend? Couple { get; set; } = null;
-    public Friend? FriendToGivePresent {get;set;} = null;
+    private Friend? FriendToGivePresent {get;set;} = null;
 #endregion
 
 #region Methods
@@ -33,6 +33,10 @@ public string ToEmail(){
     html.Append($"<label style='color:red; font-weight:bold;'>* La persona que te ha tocado regalar es: {this.FriendToGivePresent?.Name}<label>");
 
     return html.ToString();
+}
+
+public void SetFriendToGivePresent(Friend friend) {
+    this.FriendToGivePresent = friend;
 }
 
 #endregion

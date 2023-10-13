@@ -1,5 +1,5 @@
 
-namespace InvisibleFriendLibrary;
+namespace InvisibleFriendLibrary.Entities;
 
 [Serializable]
 public class Item {

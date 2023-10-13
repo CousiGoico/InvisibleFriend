@@ -1,10 +1,16 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace InvisibleFriendLibrary;
+namespace InvisibleFriendLibrary.Entities;
 
 [Serializable]
 public class SmtpConfiguration {
+
+    #region Constants
+
+    private const string pathToSaveFile = @"../Data/smpt.json";
+
+    #endregion
 
     #region Properties
 
@@ -32,7 +38,8 @@ public class SmtpConfiguration {
     }
 
     public void Save() {
-                
+        var json = Utils.ToJson<SmtpConfiguration>(this);
+        Utils.WriteInFile(pathToSaveFile, json);  
     }
 
     #endregion

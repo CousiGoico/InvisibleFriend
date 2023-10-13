@@ -25,3 +25,5 @@ L:\InvisibleFriend\InvisibleFriendAPI\obj\Debug\net6.0\refint\InvisibleFriendAPI
 L:\InvisibleFriend\InvisibleFriendAPI\obj\Debug\net6.0\InvisibleFriendAPI.pdb
 L:\InvisibleFriend\InvisibleFriendAPI\obj\Debug\net6.0\InvisibleFriendAPI.genruntimeconfig.cache
 L:\InvisibleFriend\InvisibleFriendAPI\obj\Debug\net6.0\ref\InvisibleFriendAPI.dll
+L:\InvisibleFriend\InvisibleFriendAPI\bin\Debug\net6.0\InvisibleFriendLibrary.dll
+L:\InvisibleFriend\InvisibleFriendAPI\bin\Debug\net6.0\InvisibleFriendLibrary.pdb
