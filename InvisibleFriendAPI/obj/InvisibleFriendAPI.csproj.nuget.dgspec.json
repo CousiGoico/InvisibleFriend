@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj": {}
+    "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj": {}
   },
   "projects": {
-    "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj": {
+    "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+        "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
         "projectName": "InvisibleFriendAPI",
-        "projectPath": "L:\\invisiblefriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
+        "projectPath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\InvisibleFriendAPI.csproj",
         "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-        "outputPath": "L:\\invisiblefriend\\InvisibleFriendAPI\\obj\\",
+        "outputPath": "L:\\InvisibleFriend\\InvisibleFriendAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"
