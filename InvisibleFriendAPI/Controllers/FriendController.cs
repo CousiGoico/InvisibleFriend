@@ -28,7 +28,15 @@ public class FriendController : ControllerBase
     [HttpPost(Name = "PostFriend")]
     public ActionResult Post(Friend friend)
     {
-        return Ok();
+        var database = DataBase.Get();
+        if (database != null){
+            if (database.Friends == null){
+                database.Friends = new List<Friend>();
+            }
+            database.Friends.Add(friend);
+            database.Save();
+        }
+        return Ok();;
     }
 
     [HttpPut(Name = "PutFriend")]

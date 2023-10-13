@@ -28,6 +28,14 @@ public class GameController : ControllerBase
     [HttpPost(Name = "PostGame")]
     public ActionResult Post(Game game)
     {
+        var database = DataBase.Get();
+        if (database != null){
+            if (database.Games == null){
+                database.Games = new List<Game>();
+            }
+            database.Games.Add(game);
+            database.Save();
+        }
         return Ok();
     }
 
