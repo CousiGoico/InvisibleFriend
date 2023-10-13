@@ -21,8 +21,9 @@ public class DataBase{
 
     #region Methods
 
-    public DataBase Get() {
-        return new DataBase();        
+    public static DataBase? Get() {
+        var json = Utils.ReadFromFile(pathToSaveFile);
+        return Utils.ToType<DataBase>(json);
     }
 
     public void Save() {

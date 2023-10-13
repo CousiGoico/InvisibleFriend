@@ -13,8 +13,16 @@ public class Utils{
         return JsonSerializer.Serialize(objectToJson);
     }
 
+    public static T? ToType<T>(string json){
+        return JsonSerializer.Deserialize<T>(json);
+    }
+
     public static void WriteInFile(string fileName, string text){
         File.WriteAllText(fileName, text);
+    }
+
+    public static string ReadFromFile(string fileName){
+        return File.ReadAllText(fileName);
     }
 
     #endregion

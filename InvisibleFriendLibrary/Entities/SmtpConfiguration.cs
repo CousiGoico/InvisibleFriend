@@ -42,5 +42,9 @@ public class SmtpConfiguration {
         Utils.WriteInFile(pathToSaveFile, json);  
     }
 
+    public static SmtpConfiguration GetFromDatabase(){
+        return new SmtpConfiguration();
+    }
+
     #endregion
 }

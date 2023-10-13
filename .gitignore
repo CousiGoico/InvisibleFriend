@@ -40,3 +40,6 @@ Debug/
 Release/
 */bin/*
 */obj/*
+
+# Database files
+/InvisibleFriendLibrary/Data/*.json

@@ -37,10 +37,9 @@ private void Distribute() {
 private void SendEmails() {
     this.Friends.ForEach(friend => { 
         var body = friend.ToEmail();
-        //Apply rules
         body.Replace("{{name}}", this.Name);
         body.Replace("{{rules}}", this.GetRules());
-        //Utils.SendEmail(friend.Email, body); 
+        Utils.SendEmail(SmtpConfiguration.GetFromDatabase(), friend.Email, body); 
     });
 }
 

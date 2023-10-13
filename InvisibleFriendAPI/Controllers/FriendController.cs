@@ -17,7 +17,12 @@ public class FriendController : ControllerBase
     [HttpGet(Name = "GetFriends")]
     public IEnumerable<Friend> Get()
     {
-        return new List<Friend>();
+        var friends = new List<Friend>();
+        var database = DataBase.Get();
+        if (database != null && database.Friends != null){
+            friends = database.Friends;
+        }
+        return friends;
     }
 
     [HttpPost(Name = "PostFriend")]
