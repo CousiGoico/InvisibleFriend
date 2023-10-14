@@ -5,8 +5,10 @@ namespace InvisibleFriendLibrary.Entities;
 public class Utils{
 
     #region Methods
-    public static void SendEmail(SmtpConfiguration configuration, string sender, string body){
-        configuration.GetClient().Send("email", "recipient", sender, body);
+    public static void SendEmail(SmtpConfiguration? configuration, string sender, string body){
+        if (configuration != null) {
+            configuration.GetClient().Send("email", "recipient", sender, body);
+        }
     }    
 
     public static string ToJson<T>(T objectToJson){

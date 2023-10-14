@@ -27,7 +27,7 @@ private void Distribute() {
         var minimumNumber = this.Friends.Select(x => x.Id).Min();
         var maximumNumber = this.Friends.Select(x => x.Id).Max();
         var randomId = numberRandom.Next(minimumNumber, maximumNumber);
-        if (friend.Couple != null && randomId == friend.Couple.Id){
+        if (friend.CoupleId > 0 && randomId == friend.CoupleId){
              randomId = numberRandom.Next(minimumNumber, maximumNumber);
         }
         friend.SetFriendToGivePresent(this.Friends.First(x => x.Id == randomId));
@@ -39,7 +39,11 @@ private void SendEmails() {
         var body = friend.ToEmail();
         body.Replace("{{name}}", this.Name);
         body.Replace("{{rules}}", this.GetRules());
-        Utils.SendEmail(SmtpConfiguration.GetFromDatabase(), friend.Email, body); 
+        var smtpConfiguration = SmtpConfiguration.GetFromDatabase();
+        if (smtpConfiguration != null){
+            Utils.SendEmail(smtpConfiguration, friend.Email, body); 
+        }
+        
     });
 }
 

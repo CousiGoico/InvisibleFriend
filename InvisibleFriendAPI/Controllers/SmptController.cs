@@ -46,7 +46,7 @@ private readonly ILogger<SmtpController> _logger;
     }
 
     [HttpDelete(Name = "DeleteSmtpConfiguration")]
-    public ActionResult Delete(SmtpConfiguration smtpConfiguration)
+    public ActionResult Delete()
     {
         var database = DataBase.Get();
         if (database != null){

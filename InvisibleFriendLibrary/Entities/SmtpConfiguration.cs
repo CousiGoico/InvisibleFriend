@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Mail;
+using System.Reflection.Metadata.Ecma335;
 
 namespace InvisibleFriendLibrary.Entities;
 
@@ -42,8 +43,13 @@ public class SmtpConfiguration {
         Utils.WriteInFile(pathToSaveFile, json);  
     }
 
-    public static SmtpConfiguration GetFromDatabase(){
-        return new SmtpConfiguration();
+    public static SmtpConfiguration? GetFromDatabase(){
+        SmtpConfiguration? smtpCofniguration = null;
+        var database = DataBase.Get();
+        if (database != null && database.SmtpConfiguration != null){
+            smtpCofniguration = database.SmtpConfiguration;
+        }
+        return smtpCofniguration;
     }
 
     #endregion

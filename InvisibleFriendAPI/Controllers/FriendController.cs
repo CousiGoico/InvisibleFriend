@@ -40,16 +40,16 @@ public class FriendController : ControllerBase
     }
 
     [HttpPut(Name = "PutFriend")]
-    public ActionResult Put(Friend friend)
+    public ActionResult Put(int friendId, string name, string surname, string email, int coupleId)
     {
         var database = DataBase.Get();
         if (database != null && database.Friends != null){
-            var friendFound = database.Friends.FirstOrDefault(x => x.Id == friend.Id);
+            var friendFound = database.Friends.FirstOrDefault(x => x.Id == friendId);
             if (friendFound != null){
-                friendFound.Surname = friend.Surname;
-                friendFound.Name = friend.Name;
-                friendFound.Email = friend.Email;
-                friendFound.Couple = friend.Couple;
+                friendFound.Surname = surname;
+                friendFound.Name = name;
+                friendFound.Email = email;
+                friendFound.CoupleId = coupleId;
                 database.Save();
             }
         }
@@ -57,11 +57,11 @@ public class FriendController : ControllerBase
     }
 
     [HttpDelete(Name = "DeleteFriend")]
-    public ActionResult Delete(Friend friend)
+    public ActionResult Delete(int id)
     {
         var database = DataBase.Get();
         if (database != null && database.Friends != null){
-            var friendFound = database.Friends.FirstOrDefault(x => x.Id == friend.Id);
+            var friendFound = database.Friends.FirstOrDefault(x => x.Id == id);
             if (friendFound != null){
                 database.Friends.Remove(friendFound);
                 database.Save();

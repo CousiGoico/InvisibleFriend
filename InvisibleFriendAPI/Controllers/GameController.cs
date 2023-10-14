@@ -58,11 +58,11 @@ public class GameController : ControllerBase
     }
 
     [HttpDelete(Name = "DeleteGame")]
-    public ActionResult Delete(Game game)
+    public ActionResult Delete(int id)
     {
         var database = DataBase.Get();
         if (database != null && database.Games != null){
-            var gameFound = database.Games.FirstOrDefault(x => x.Id == game.Id);
+            var gameFound = database.Games.FirstOrDefault(x => x.Id == id);
             if (gameFound != null){
                 database.Games.Remove(gameFound);
                 database.Save();
