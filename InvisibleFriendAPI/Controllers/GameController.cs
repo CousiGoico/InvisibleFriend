@@ -40,17 +40,17 @@ public class GameController : ControllerBase
     }
 
     [HttpPut(Name = "PutGame")]
-    public ActionResult Put(Game game)
+    public ActionResult Put(int gameId, DateTime startDate, List<Friend> friends, DateTime dateGivePresent, string location, decimal budget)
     {
          var database = DataBase.Get();
         if (database != null && database.Games != null){
-            var gameFound = database.Games.FirstOrDefault(x => x.Id == game.Id);
+            var gameFound = database.Games.FirstOrDefault(x => x.Id == gameId);
             if (gameFound != null){
-                gameFound.StartDate = game.StartDate;
-                gameFound.Friends = game.Friends;
-                gameFound.DateGivePresent = game.DateGivePresent;
-                gameFound.Location = game.Location;
-                gameFound.Budget = game.Budget;
+                gameFound.StartDate = startDate;
+                gameFound.Friends = friends;
+                gameFound.DateGivePresent = dateGivePresent;
+                gameFound.Location = location;
+                gameFound.Budget = budget;
                 database.Save();
             }
         }
