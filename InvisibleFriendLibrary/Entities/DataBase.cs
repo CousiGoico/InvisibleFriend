@@ -15,7 +15,7 @@ public class DataBase{
 
     public List<Game>? Games {get;set;} = null;
 
-    public SmtpConfiguration? Configuration {get;set;} = null;
+    public SmtpConfiguration? SmtpConfiguration {get;set;} = null;
 
     #endregion
 

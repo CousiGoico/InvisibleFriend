@@ -42,12 +42,32 @@ public class GameController : ControllerBase
     [HttpPut(Name = "PutGame")]
     public ActionResult Put(Game game)
     {
+         var database = DataBase.Get();
+        if (database != null && database.Games != null){
+            var gameFound = database.Games.FirstOrDefault(x => x.Id == game.Id);
+            if (gameFound != null){
+                gameFound.StartDate = game.StartDate;
+                gameFound.Friends = game.Friends;
+                gameFound.DateGivePresent = game.DateGivePresent;
+                gameFound.Location = game.Location;
+                gameFound.Budget = game.Budget;
+                database.Save();
+            }
+        }
         return Ok();
     }
 
     [HttpDelete(Name = "DeleteGame")]
     public ActionResult Delete(Game game)
     {
+        var database = DataBase.Get();
+        if (database != null && database.Games != null){
+            var gameFound = database.Games.FirstOrDefault(x => x.Id == game.Id);
+            if (gameFound != null){
+                database.Games.Remove(gameFound);
+                database.Save();
+            }
+        }
         return Ok();
     }
 }
