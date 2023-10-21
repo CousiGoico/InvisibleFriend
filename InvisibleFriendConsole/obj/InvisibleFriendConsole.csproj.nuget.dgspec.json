@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj": {}
+    "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj": {}
   },
   "projects": {
-    "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj": {
+    "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
+        "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
         "projectName": "InvisibleFriendConsole",
-        "projectPath": "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
+        "projectPath": "L:\\InvisibleFriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
         "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-        "outputPath": "L:\\invisiblefriend\\InvisibleFriendConsole\\obj\\",
+        "outputPath": "L:\\InvisibleFriend\\InvisibleFriendConsole\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
-                "projectPath": "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj"
+              "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
+                "projectPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj"
               }
             }
           }
@@ -61,14 +61,14 @@
         }
       }
     },
-    "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
+    "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
+        "projectUniqueName": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
         "projectName": "InvisibleFriendLibrary",
-        "projectPath": "L:\\invisiblefriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
+        "projectPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\InvisibleFriendLibrary.csproj",
         "packagesPath": "C:\\Users\\Cousi\\.nuget\\packages\\",
-        "outputPath": "L:\\invisiblefriend\\InvisibleFriendLibrary\\obj\\",
+        "outputPath": "L:\\InvisibleFriend\\InvisibleFriendLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cousi\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -5,11 +5,11 @@ namespace InvisibleFriendAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SmtpController : ControllerBase{
+public class SmtpConfigurationController : ControllerBase{
 
-private readonly ILogger<SmtpController> _logger;
+private readonly ILogger<SmtpConfigurationController> _logger;
 
-    public SmtpController(ILogger<SmtpController> logger)
+    public SmtpConfigurationController(ILogger<SmtpConfigurationController> logger)
     {
         _logger = logger;
     }
