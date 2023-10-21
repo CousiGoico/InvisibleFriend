@@ -1,4 +1,7 @@
-﻿namespace InvisibleFriendConsole;
+﻿using System.ComponentModel.DataAnnotations;
+using InvisibleFriendLibrary.Entities;
+
+namespace InvisibleFriendConsole;
 class Program
 {
     static void Main(string[] args)
@@ -9,7 +12,7 @@ class Program
     private static void Root() {
         var optionMenuId = ShowMainMenu();
         Int32 subOptionMenuId = ShowSuMenu(optionMenuId);
-        processSubMenu(subOptionMenuId);
+        processSubMenu(optionMenuId, subOptionMenuId);
     }
 
     private static Int32 ShowMainMenu() {
@@ -56,7 +59,32 @@ class Program
         }
     }
 
-    private static void processSubMenu(Int32 subMenuId){
+    private static void processSubMenu(Int32 optionMenuId, Int32 subMenuId){
+        switch(subMenuId){
+            case 1:
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4:
+            break;
+        }
+    }
+
+    private static List<T> Get<T>(){
+return new List<T>();
+    }
+
+    private static void Post<T>(){
+        
+    }
+
+    private static void Put<T>(){}
+
+    private static void Delete<T>(){}
+
+    private static void CallAPI(string url, string verb){
 
     }
 
