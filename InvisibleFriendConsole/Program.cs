@@ -2,6 +2,7 @@
 using InvisibleFriendLibrary.Entities;
 using System.Text.Json;
 using InvisibleFriendConsole.Services;
+using System.Reflection;
 
 namespace InvisibleFriendConsole;
 class Program
@@ -18,12 +19,7 @@ class Program
     }
 
     private static Int32 ShowMainMenu() {
-        Console.WriteLine("Menu:");
-        Console.WriteLine("1. Amigos");
-        Console.WriteLine("2. Juego");
-        Console.WriteLine("3. Configuración correo");
-        Console.WriteLine("4. Salir");
-        Console.WriteLine("Por favor, introduzca el código de una opción de menú:");
+        Menu.PaintMenu(Menu.GetMenu(null));
         var optionMenu = Console.ReadLine();
         var isCorrect = Int32.TryParse(optionMenu, out int optionMenuId);
         if (optionMenuId == 4){
@@ -38,15 +34,8 @@ class Program
         }
     }
 
-    private static Int32 ShowSuMenu(Int32 typeId) {
-        string subMenuName = typeId == 1 ? "amigo" : typeId == 2 ? "juego" : "configuración correo";
-         Console.WriteLine($"Submenu {subMenuName}:");
-        Console.WriteLine("1. Obtener");
-        Console.WriteLine("2. Nuevo");
-        Console.WriteLine("3. Modificar");
-        Console.WriteLine("4. Eliminar");
-        Console.WriteLine("5. Salir");
-        Console.WriteLine("Por favor, introduzca el código de una opción de menú:");
+    private static Int32 ShowSuMenu(int menuId) {
+        Menu.PaintMenu(Menu.GetMenu(menuId));
         var optionMenu = Console.ReadLine();
         var isCorrect = Int32.TryParse(optionMenu, out int optionMenuId);
         if (optionMenuId == 5){
@@ -57,13 +46,48 @@ class Program
         }
         else {
             Console.WriteLine("Opción incorrecta. Por favor, vuelva a intentarlo.");
-            return ShowMainMenu();
+            return ShowSuMenu(menuId);
         }
     }
 
     private static void processSubMenu(Int32 optionMenuId, Int32 subMenuId){
         var callHttp = new CallHttp();
-        callHttp.Process(optionMenuId, subMenuId);
+        Process(optionMenuId, subMenuId);
+    }
+
+    private static void Process(int optionMenuId, int subMenuId){
+        var callHttp = new CallHttp();
+        Type type = optionMenuId == 1 ? typeof(Friend) : optionMenuId == 1 ? typeof(Game) : typeof(SmtpConfiguration);
+        switch(subMenuId) {
+            case 1:
+            MethodInfo? infoMethodGet = typeof(CallHttp).GetMethod("Get");
+            if (infoMethodGet != null){
+                MethodInfo method = infoMethodGet.MakeGenericMethod(type);
+                var items = method.Invoke(null, null);
+            }
+            break;
+            case 2:
+            MethodInfo? infoMethodPost = typeof(CallHttp).GetMethod("Post");
+            if (infoMethodPost != null){
+                MethodInfo method = infoMethodPost.MakeGenericMethod(type);
+                var items = method.Invoke(null, null);
+            }
+            break;
+            case 3:
+            MethodInfo? infoMethodPut = typeof(CallHttp).GetMethod("Put");
+            if (infoMethodPut != null){
+                MethodInfo method = infoMethodPut.MakeGenericMethod(type);
+                var items = method.Invoke(null, null);
+            }
+            break;
+            case 4:
+            MethodInfo? infoMethodDelete = typeof(CallHttp).GetMethod("Delete");
+            if (infoMethodDelete != null){
+                MethodInfo method = infoMethodDelete.MakeGenericMethod(type);
+                var items = method.Invoke(null, null);
+            }
+            break;
+        }
     }
 
 }

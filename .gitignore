@@ -44,8 +44,10 @@ Release/
 # Database files
 /InvisibleFriendLibrary/Data/*.json
 
+*.cache
 InvisibleFriendConsole/obj/project.nuget.cache
 InvisibleFriendConsole/obj/Debug/net6.0/InvisibleFriendConsole.assets.cache
 InvisibleFriendConsole/obj/Debug/net6.0/InvisibleFriendConsole.GeneratedMSBuildEditorConfig.editorconfig
 InvisibleFriendConsole/obj/project.assets.json
 InvisibleFriendConsole/obj/InvisibleFriendConsole.csproj.nuget.dgspec.json
+InvisibleFriendConsole/obj/Debug/net6.0/InvisibleFriendConsole.assets.cache
