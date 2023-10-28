@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using InvisibleFriendLibrary.Entities;
 using InvisibleFriendLibrary.Repositories;
+using InvisibleFriendLibrary.Services;
 
 namespace InvisibleFriendAPI.Controllers;
 
@@ -9,65 +10,45 @@ namespace InvisibleFriendAPI.Controllers;
 public class FriendController : ControllerBase
 {
     private readonly ILogger<FriendController> _logger;
+    private IFriendService friendService;
 
-    public FriendController(ILogger<FriendController> logger)
+    public FriendController(ILogger<FriendController> logger, IFriendService friendService)
     {
         _logger = logger;
+        this.friendService = friendService;
     }
 
     [HttpGet(Name = "GetFriends")]
     public IEnumerable<Friend> Get()
     {
-        var friends = new List<Friend>();
-        var database = new DataBaseRepository().Get();
-        if (database != null && database.Friends != null){
-            friends = database.Friends;
-        }
-        return friends;
+        return this.friendService.Get();
     }
 
     [HttpPost(Name = "PostFriend")]
     public ActionResult Post(Friend friend)
     {
-        var database = new DataBaseRepository().Get();
-        if (database != null){
-            if (database.Friends == null){
-                database.Friends = new List<Friend>();
-            }
-            database.Friends.Add(friend);
-            database.Save();
-        }
+        this.friendService.Post(friend);
         return Ok();
     }
 
     [HttpPut(Name = "PutFriend")]
     public ActionResult Put(int friendId, string name, string surname, string email, int coupleId)
     {
-        var database = new DataBaseRepository().Get();
-        if (database != null && database.Friends != null){
-            var friendFound = database.Friends.FirstOrDefault(x => x.Id == friendId);
-            if (friendFound != null){
-                friendFound.Surname = surname;
-                friendFound.Name = name;
-                friendFound.Email = email;
-                friendFound.CoupleId = coupleId;
-                database.Save();
-            }
-        }
+        var friend = new Friend {
+            Id = friendId,
+            Name = name,
+            Surname = surname,
+            Email = email,
+            CoupleId = coupleId
+        };
+        this.friendService.Put(friend);
         return Ok();
     }
 
     [HttpDelete(Name = "DeleteFriend")]
     public ActionResult Delete(int id)
     {
-        var database = new DataBaseRepository().Get();
-        if (database != null && database.Friends != null){
-            var friendFound = database.Friends.FirstOrDefault(x => x.Id == id);
-            if (friendFound != null){
-                database.Friends.Remove(friendFound);
-                database.Save();
-            }
-        }
+        this.friendService.Delete(id);
         return Ok();
     }
 }
