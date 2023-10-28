@@ -1,9 +1,8 @@
 using InvisibleFriendLibrary.Entities;
 
-namespace InvisibleFriendLibrary.Services{
+namespace InvisibleFriendLibrary.Domain{
 
-    public interface ISmtpService{
-        
+    public interface ISmtpDomain{
         SmtpConfiguration Get();
 
         void Post(SmtpConfiguration smtpConfiguration);
@@ -12,5 +11,4 @@ namespace InvisibleFriendLibrary.Services{
 
         void Delete();
     }
-
 }

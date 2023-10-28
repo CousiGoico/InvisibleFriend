@@ -1,4 +1,5 @@
 using InvisibleFriendLibrary.Entities;
+using InvisibleFriendLibrary.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InvisibleFriendAPI.Controllers;
@@ -7,52 +8,39 @@ namespace InvisibleFriendAPI.Controllers;
 [Route("[controller]")]
 public class SmtpConfigurationController : ControllerBase{
 
-private readonly ILogger<SmtpConfigurationController> _logger;
+    private readonly ILogger<SmtpConfigurationController> _logger;
+    private SmtpServices smtpService;
 
-    public SmtpConfigurationController(ILogger<SmtpConfigurationController> logger)
+    public SmtpConfigurationController(ILogger<SmtpConfigurationController> logger, SmtpServices smtpService)
     {
         _logger = logger;
+        this.smtpService = smtpService;
     }
 
     [HttpGet(Name = "GetSmtpConfiguration")]
     public SmtpConfiguration Get()
     {
-        var smtp = new SmtpConfiguration();
-        var database = DataBase.Get();
-        if (database != null && database.SmtpConfiguration != null){
-            smtp = database.SmtpConfiguration;
-        }
-        return smtp;
+        return this.smtpService.Get();
     }
 
     [HttpPost(Name = "PostSmtpConfiguration")]
     public ActionResult Post(SmtpConfiguration smtpConfiguration)
     {
-        var database = DataBase.Get();
-        if (database != null){
-            if (database.SmtpConfiguration == null){
-                database.SmtpConfiguration = new SmtpConfiguration();
-            }
-            database.SmtpConfiguration = smtpConfiguration;
-            database.Save();
-        }
+        this.smtpService.Post(smtpConfiguration);
         return Ok();
     }
 
     [HttpPut(Name = "PutSmtpConfiguration")]
     public ActionResult Put(SmtpConfiguration smtpConfiguration)
     {
-        return Post(smtpConfiguration);
+        this.smtpService.Put(smtpConfiguration);
+        return Ok();
     }
 
     [HttpDelete(Name = "DeleteSmtpConfiguration")]
     public ActionResult Delete()
     {
-        var database = DataBase.Get();
-        if (database != null){
-            database.SmtpConfiguration = null;
-            database.Save();
-        }
+       this.smtpService.Delete();
         return Ok();
     }
     
