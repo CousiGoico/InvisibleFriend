@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Mail;
 using System.Reflection.Metadata.Ecma335;
+using InvisibleFriendLibrary.Repositories;
 
 namespace InvisibleFriendLibrary.Entities;
 
@@ -45,7 +46,7 @@ public class SmtpConfiguration {
 
     public static SmtpConfiguration? GetFromDatabase(){
         SmtpConfiguration? smtpCofniguration = null;
-        var database = DataBase.Get();
+        var database = new DataBaseRepository().Get();
         if (database != null && database.SmtpConfiguration != null){
             smtpCofniguration = database.SmtpConfiguration;
         }

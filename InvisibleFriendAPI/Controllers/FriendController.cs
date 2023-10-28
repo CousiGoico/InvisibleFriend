@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using InvisibleFriendLibrary.Entities;
+using InvisibleFriendLibrary.Repositories;
 
 namespace InvisibleFriendAPI.Controllers;
 
@@ -18,7 +19,7 @@ public class FriendController : ControllerBase
     public IEnumerable<Friend> Get()
     {
         var friends = new List<Friend>();
-        var database = DataBase.Get();
+        var database = new DataBaseRepository().Get();
         if (database != null && database.Friends != null){
             friends = database.Friends;
         }
@@ -28,7 +29,7 @@ public class FriendController : ControllerBase
     [HttpPost(Name = "PostFriend")]
     public ActionResult Post(Friend friend)
     {
-        var database = DataBase.Get();
+        var database = new DataBaseRepository().Get();
         if (database != null){
             if (database.Friends == null){
                 database.Friends = new List<Friend>();
@@ -42,7 +43,7 @@ public class FriendController : ControllerBase
     [HttpPut(Name = "PutFriend")]
     public ActionResult Put(int friendId, string name, string surname, string email, int coupleId)
     {
-        var database = DataBase.Get();
+        var database = new DataBaseRepository().Get();
         if (database != null && database.Friends != null){
             var friendFound = database.Friends.FirstOrDefault(x => x.Id == friendId);
             if (friendFound != null){
@@ -59,7 +60,7 @@ public class FriendController : ControllerBase
     [HttpDelete(Name = "DeleteFriend")]
     public ActionResult Delete(int id)
     {
-        var database = DataBase.Get();
+        var database = new DataBaseRepository().Get();
         if (database != null && database.Friends != null){
             var friendFound = database.Friends.FirstOrDefault(x => x.Id == id);
             if (friendFound != null){

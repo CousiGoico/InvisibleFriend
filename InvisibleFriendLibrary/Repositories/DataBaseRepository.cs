@@ -1,7 +1,9 @@
-namespace InvisibleFriendLibrary.Entities;
+using InvisibleFriendLibrary.Entities;
+
+namespace InvisibleFriendLibrary.Repositories;
 
 [Serializable]
-public class DataBase{
+public class DataBaseRepository: IDataBaseRepository{
 
     #region Constants
 
@@ -21,13 +23,13 @@ public class DataBase{
 
     #region Methods
 
-    public static DataBase? Get() {
+    public DataBaseRepository? Get() {
         var json = Utils.ReadFromFile(pathToSaveFile);
-        return Utils.ToType<DataBase>(json);
+        return Utils.ToType<DataBaseRepository>(json);
     }
 
     public void Save() {
-        var json = Utils.ToJson<DataBase>(this);
+        var json = Utils.ToJson<DataBaseRepository>(this);
         Utils.WriteInFile(pathToSaveFile, json);
     }
 

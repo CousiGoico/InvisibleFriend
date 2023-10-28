@@ -1,6 +1,7 @@
 
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using InvisibleFriendLibrary.Repositories;
 
 namespace InvisibleFriendLibrary.Entities;
 
@@ -17,7 +18,7 @@ public class Friend : Item {
 #region Methods
 
 private static Friend? GetFriend(int id) {
-    var database = DataBase.Get();    
+    var database = new DataBaseRepository().Get();    
     Friend? friend = null;
     if (database != null && database.Friends != null){
         friend = database.Friends.FirstOrDefault(x => x.Id == id);
