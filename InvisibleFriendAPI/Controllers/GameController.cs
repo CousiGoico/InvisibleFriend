@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using InvisibleFriendLibrary.Entities;
+using InvisibleFriendLibrary.Services;
 
 namespace InvisibleFriendAPI.Controllers;
 
@@ -8,66 +9,47 @@ namespace InvisibleFriendAPI.Controllers;
 public class GameController : ControllerBase
 {
     private readonly ILogger<GameController> _logger;
+    private readonly IGameService iGameService;
 
-    public GameController(ILogger<GameController> logger)
+    public GameController(ILogger<GameController> logger, IGameService iGameService)
     {
-        _logger = logger;
+        this._logger = logger;
+        this.iGameService = iGameService;
     }
 
     [HttpGet(Name = "GetGame")]
     public IEnumerable<Game> Get()
     {
-        var games = new List<Game>();
-        var database = DataBase.Get();
-        if (database != null && database.Games != null){
-            games = database.Games;
-        }
+        var games = iGameService.Get();
         return games;
     }
 
     [HttpPost(Name = "PostGame")]
     public ActionResult Post(Game game)
     {
-        var database = DataBase.Get();
-        if (database != null){
-            if (database.Games == null){
-                database.Games = new List<Game>();
-            }
-            database.Games.Add(game);
-            database.Save();
-        }
+        iGameService.Post(game);
         return Ok();
     }
 
     [HttpPut(Name = "PutGame")]
     public ActionResult Put(int gameId, DateTime startDate, List<Friend> friends, DateTime dateGivePresent, string location, decimal budget)
     {
-         var database = DataBase.Get();
-        if (database != null && database.Games != null){
-            var gameFound = database.Games.FirstOrDefault(x => x.Id == gameId);
-            if (gameFound != null){
-                gameFound.StartDate = startDate;
-                gameFound.Friends = friends;
-                gameFound.DateGivePresent = dateGivePresent;
-                gameFound.Location = location;
-                gameFound.Budget = budget;
-                database.Save();
-            }
-        }
+        var game = new Game {
+            Id = gameId,
+            StartDate = startDate,
+            Friends =friends,
+            DateGivePresent = dateGivePresent,
+            Location = location,
+            Budget = budget
+        };
+         iGameService.Put(game);
         return Ok();
     }
 
     [HttpDelete(Name = "DeleteGame")]
     public ActionResult Delete(int id)
     {
-        var database = DataBase.Get();
-        if (database != null && database.Games != null){
-            var gameFound = database.Games.FirstOrDefault(x => x.Id == id);
-            if (gameFound != null){
-                database.Games.Remove(gameFound);
-                database.Save();
-            }
-        }
+        iGameService.Delete(id);
         return Ok();
     }
 }
