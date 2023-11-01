@@ -3,7 +3,7 @@ using InvisibleFriendLibrary.Entities;
 
 namespace InvisibleFriendLibrary.Services{
 
-    public class SmtpServices:ISmtpService{
+    public class SmtpServices : ISmtpService{
 
         private ISmtpDomain smtpDomain;
 

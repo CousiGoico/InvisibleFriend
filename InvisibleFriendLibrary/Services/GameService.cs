@@ -3,12 +3,12 @@ using InvisibleFriendLibrary.Entities;
 
 namespace InvisibleFriendLibrary.Services{
 
-    public class GameServices:IGameService{
+    public class GameServices : IGameService{
 
-        private IGameService gameDomain;
+        private IGameDomain gameDomain;
 
-        public GameServices(IGameService gameDomain){
-            this.gameDomain =gameDomain;
+        public GameServices(IGameDomain gameDomain){
+            this.gameDomain = gameDomain;
         }
 
         public IList<Game> Get(){

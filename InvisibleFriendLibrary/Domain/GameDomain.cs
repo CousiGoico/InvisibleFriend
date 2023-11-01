@@ -4,7 +4,7 @@ using InvisibleFriendLibrary.Repositories;
 
 namespace InvisibleFriendLibrary.Domain{
 
-    public class GameDomain:IGameDomain
+    public class GameDomain : IGameDomain
     {
 
         private DataBaseRepository dataBaseRepository;

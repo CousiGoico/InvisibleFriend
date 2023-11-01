@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using InvisibleFriendLibrary.Domain;
 using InvisibleFriendLibrary.Repositories;
 using InvisibleFriendLibrary.Services;
@@ -42,14 +43,14 @@ public class Program
         builder.Services.AddSingleton<IDataBaseRepository, DataBaseRepository>();
         
         // // Services
-        // builder.Services.AddScoped<ISmtpService, SmtpServices>();
-        // builder.Services.AddScoped<IFriendService, FriendServices>();
-        // builder.Services.AddScoped<IGameService, GameServices>();
+        builder.Services.AddSingleton<ISmtpService>(new SmtpServices(new SmtpDomain(new DataBaseRepository())));
+        builder.Services.AddSingleton<IFriendService>(new FriendServices(new FriendDomain(new DataBaseRepository())));
+        builder.Services.AddSingleton<IGameService>(new GameServices(new GameDomain(new DataBaseRepository())));
 
-        // // Domain
-        // builder.Services.AddScoped<ISmtpDomain, SmtpDomain>();
-        // builder.Services.AddScoped<IFriendDomain, FriendDomain>();
-        // builder.Services.AddScoped<IGameDomain, GameDomain>();
+        // Domain
+        builder.Services.AddSingleton<ISmtpDomain>(new SmtpDomain(new DataBaseRepository()));
+        builder.Services.AddSingleton<IFriendDomain>(new FriendDomain(new DataBaseRepository()));
+        builder.Services.AddSingleton<IGameDomain>(new GameDomain(new DataBaseRepository()));
     
 
     }
