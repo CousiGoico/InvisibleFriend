@@ -1,4 +1,6 @@
+using InvisibleFriendLibrary.Domain;
 using InvisibleFriendLibrary.Entities;
+using InvisibleFriendLibrary.Repositories;
 using InvisibleFriendLibrary.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +11,12 @@ namespace InvisibleFriendAPI.Controllers;
 public class SmtpConfigurationController : ControllerBase{
 
     private readonly ILogger<SmtpConfigurationController> _logger;
-    private SmtpServices smtpService;
+    private readonly ISmtpService smtpService;
 
-    public SmtpConfigurationController(ILogger<SmtpConfigurationController> logger, SmtpServices smtpService)
+    public SmtpConfigurationController(ILogger<SmtpConfigurationController> logger, ISmtpService smtpService)
     {
         _logger = logger;
+
         this.smtpService = smtpService;
     }
 

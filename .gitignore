@@ -1,5 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Cache
+/InvisibleFriendConsole/*.cache
+/InvisibleFriendConsole/*/*.cache
+/InvisibleFriendConsole/*/*/*.cache
+/InvisibleFriendConsole/*/*/*/*.cache
+/InvisibleFriendLibrary/*/*/*/*.cache
+/InvisibleFriendAPI/*/*/*/*.cache
+
 # IDEs and editors
 .idea/
 .project
@@ -43,8 +51,3 @@ Release/
 
 # Database files
 /InvisibleFriendLibrary/Data/*.json
-
-# Cache
-InvisibleFriendConsole/*/*/*/*.cache
-InvisibleFriendLibrary/*/*/*/*.cache
-InvisibleFriendAPI/*/*/*/*.cache

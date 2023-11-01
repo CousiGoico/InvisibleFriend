@@ -1,3 +1,7 @@
+using InvisibleFriendLibrary.Domain;
+using InvisibleFriendLibrary.Repositories;
+using InvisibleFriendLibrary.Services;
+
 namespace InvisibleFriendAPI;
 
 public class Program
@@ -7,6 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        SetDependencyInjection(builder);
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -30,5 +35,22 @@ public class Program
         app.MapControllers();
 
         app.Run();
+    }
+
+    private static void SetDependencyInjection(WebApplicationBuilder builder){
+        // Repositories
+        builder.Services.AddSingleton<IDataBaseRepository, DataBaseRepository>();
+        
+        // // Services
+        // builder.Services.AddScoped<ISmtpService, SmtpServices>();
+        // builder.Services.AddScoped<IFriendService, FriendServices>();
+        // builder.Services.AddScoped<IGameService, GameServices>();
+
+        // // Domain
+        // builder.Services.AddScoped<ISmtpDomain, SmtpDomain>();
+        // builder.Services.AddScoped<IFriendDomain, FriendDomain>();
+        // builder.Services.AddScoped<IGameDomain, GameDomain>();
+    
+
     }
 }
