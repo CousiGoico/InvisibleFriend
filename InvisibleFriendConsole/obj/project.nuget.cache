@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PrdOBQFDdfanNDIlKDT7PbaY6cEFSGJxVtfU29j4IsZnRDLFN2zc1xGFGgF6cXJN25KRcgf2SjcvqCwAFi5MMw==",
+  "dgSpecHash": "7JohuJ798S/agbsuSWhnPu32GXZYiPzK88rBmItEJmz68GIDX9R1TAwPUhqwR8UO4mUDeyX+fBhVwy+j8rnkfw==",
   "success": true,
   "projectFilePath": "L:\\invisiblefriend\\InvisibleFriendConsole\\InvisibleFriendConsole.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Cousi\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
+    "C:\\Users\\Cousi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }
