@@ -7,57 +7,64 @@
     Setup
   </div>
   <div class="card-body">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="input-group">
-                 <span class="input-group-text" id="basic-addon1"><span class="bi bi-hdd-rack-fill"></span></span>
-                <input type="text" class="form-control" placeholder="Server" aria-label="Server" aria-describedby="basic-addon1">
+    <EditForm Model="@Model" OnSubmit="@Save">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"><span class="bi bi-hdd-rack-fill"></span></span>
+                    <input type="text" @bind="Model.Smtp" class="form-control" placeholder="Server" aria-label="Server" aria-describedby="basic-addon1">
+                </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="number" class="form-control" placeholder="port" aria-label="port" aria-describedby="basic-addon1">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                    <input type="number" @bind="Model.Port" class="form-control" placeholder="port" aria-label="port" aria-describedby="basic-addon1">
+                </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="input-group">
-                <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Ssl</label>
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Ssl</label>
+                        <input class="form-check-input" @bind="Model.Ssl" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-md-6">
-            <div class="input-group">
-                 <span class="input-group-text" id="basic-addon1"><span class="bi bi-person-fill"></span></span>
-                <input type="text" class="form-control" placeholder="User" aria-label="User" aria-describedby="basic-addon1">
-            </div>
-        </div><div class="col-md-6">
-            <div class="input-group">
-                 <span class="input-group-text" id="basic-addon1"><span class="bi bi-key-fill"></span></span>
-                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"><span class="bi bi-person-fill"></span></span>
+                    <input type="text" @bind="Model.User" class="form-control" placeholder="User" aria-label="User" aria-describedby="basic-addon1">
+                </div>
+            </div><div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"><span class="bi bi-key-fill"></span></span>
+                    <input type="password" @bind="Model.Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-md-3">
-            <button class="btn btn-primary" type="button"><span class="bi bi-floppy"></span>&nbsp;Save</button>
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <button class="btn btn-primary" type="submit"><span class="bi bi-floppy"></span>&nbsp;Save</button>
+            </div>
         </div>
-    </div>
+    </EditForm>
   </div>
 </div>
 
 @code {
 
-    private Models.SetupModel? model {get;set;} = null;
+    private Models.SetupModel Model {get;set;} = new Models.SetupModel();
 
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
+    protected override async Task OnInitializedAsync ()
+    {
+        base.OnInitialized();
 
-            
-        }
+        var Model = await Services.HttpService.Get<Models.SetupModel>("https://localhost:7096/SmtpConfiguration");
+    }
+
+    public void Save()
+	{
+		// Save the User model
+	}
 }
