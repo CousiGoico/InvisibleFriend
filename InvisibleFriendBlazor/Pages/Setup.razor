@@ -63,8 +63,14 @@
         var Model = await Services.HttpService.Get<Models.SetupModel>("https://localhost:7096/SmtpConfiguration");
     }
 
-    public void Save()
+    public async Task Save()
 	{
-		// Save the User model
+		var httpResponseMessage = await Services.HttpService.Post<Models.SetupModel>("https://localhost:7096/SmtpConfiguration", Model);
+        if (httpResponseMessage.StatusCode == System.Net.HttpStatusCode.Created){
+            
+        }
+        else {
+            throw new Exception("Couldn't create object.");
+        }
 	}
 }

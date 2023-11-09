@@ -17,7 +17,10 @@ namespace InvisibleFriendBlazor{
             return System.Text.Json.JsonSerializer.Serialize(instance);
         }
 
-        public static HttpContent toHttpContent(object instance) {
+        public static HttpContent toHttpContent<T>(T instance) {
+            if (instance == null) {
+                throw new Exception("The instance is null.");
+            }
             return new StringContent(toJson(instance), System.Text.Encoding.UTF8, "application/json");
         }
     }
