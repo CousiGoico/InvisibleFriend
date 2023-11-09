@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using Autofac;
 using InvisibleFriendLibrary.Domain;
 using InvisibleFriendLibrary.Repositories;
 using InvisibleFriendLibrary.Services;
@@ -7,12 +8,14 @@ namespace InvisibleFriendAPI;
 
 public class Program
 {
+    private static IContainer? Container {get;set;}
+
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        SetDependencyInjection(builder);
+        Container = SetDependencyInjection();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -38,20 +41,9 @@ public class Program
         app.Run();
     }
 
-    private static void SetDependencyInjection(WebApplicationBuilder builder){
-        // Repositories
-        builder.Services.AddSingleton<IDataBaseRepository, DataBaseRepository>();
-        
-        // // Services
-        builder.Services.AddSingleton<ISmtpService>(new SmtpServices(new SmtpDomain(new DataBaseRepository())));
-        builder.Services.AddSingleton<IFriendService>(new FriendServices(new FriendDomain(new DataBaseRepository())));
-        builder.Services.AddSingleton<IGameService>(new GameServices(new GameDomain(new DataBaseRepository())));
-
-        // Domain
-        builder.Services.AddSingleton<ISmtpDomain>(new SmtpDomain(new DataBaseRepository()));
-        builder.Services.AddSingleton<IFriendDomain>(new FriendDomain(new DataBaseRepository()));
-        builder.Services.AddSingleton<IGameDomain>(new GameDomain(new DataBaseRepository()));
-    
-
+    private static IContainer SetDependencyInjection(){
+        var builderAutofac = new ContainerBuilder();
+        builderAutofac.RegisterModule<CoreLibModule>();
+        return builderAutofac.Build();
     }
 }
