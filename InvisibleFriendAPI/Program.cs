@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Autofac;
+using InvisibleFriendAPI.Controllers;
 using InvisibleFriendLibrary.Domain;
 using InvisibleFriendLibrary.Repositories;
 using InvisibleFriendLibrary.Services;
@@ -24,6 +25,9 @@ public class Program
 
         var app = builder.Build();
 
+        app.UseCors();
+        
+
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
@@ -44,6 +48,11 @@ public class Program
     private static IContainer SetDependencyInjection(){
         var builderAutofac = new ContainerBuilder();
         builderAutofac.RegisterModule<CoreLibModule>();
+    
+        builderAutofac.RegisterType<SmtpConfigurationController>().InstancePerRequest();
+        builderAutofac.RegisterType<GameController>().InstancePerRequest();
+        builderAutofac.RegisterType<FriendController>().InstancePerRequest();
+
         return builderAutofac.Build();
     }
 }
